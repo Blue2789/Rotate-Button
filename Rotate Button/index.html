@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3D Rotation</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        #square {
+            width: 150px;
+            height: 150px;
+            background-color: dodgerblue;
+            margin-bottom: 20px;
+            transform-style: preserve-3d;
+            transition: transform 1s ease;
+        }
+
+        .button-group {
+            display: flex;
+            gap: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div id="square"></div>
+    <div class="button-group">
+        <button onclick="rotateX()">Rotate X</button>
+        <button onclick="rotateY()">Rotate Y</button>
+        <button onclick="rotateZ()">Rotate Z</button>
+    </div>
+
+    <script>
+        function rotateX() {
+            document.getElementById('square').style.transform = `rotateX(360deg)`;
+            setTimeout(() => {
+                document.getElementById('square').style.transform = `rotateX(0deg)`;
+            }, 1000);  // Return to normal after the full rotation
+        }
+
+        function rotateY() {
+            document.getElementById('square').style.transform = `rotateY(360deg)`;
+            setTimeout(() => {
+                document.getElementById('square').style.transform = `rotateY(0deg)`;
+            }, 1000);  // Return to normal after the full rotation
+        }
+
+        function rotateZ() {
+            document.getElementById('square').style.transform = `rotateZ(360deg)`;
+            setTimeout(() => {
+                document.getElementById('square').style.transform = `rotateZ(0deg)`;
+            }, 1000);  // Return to normal after the full rotation
+        }
+    </script>
+</body>
+</html>
